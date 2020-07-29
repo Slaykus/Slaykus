@@ -16,6 +16,6 @@ with cpu:
         print("Температура процессора - " + cpu.temperature + "Градусов")
         sleep(1)
 while True:
-    api.messages.send(peer_id = 282902478, message = "Температура процессора - " + cpu.temperature + "Градусов")
+    api.messages.send(peer_id = 282902478, message = "Температура процессора - " + str(cpu.temperature) + "Градусов")
     time.sleep(15)
     
