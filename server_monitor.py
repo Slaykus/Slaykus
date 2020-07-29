@@ -13,7 +13,7 @@ cpu = Cpu(monitoring_latency=1)
 
 with cpu:
     for __ in range(4):
-        print("Температура процессора - " + cpu.temperature + "Градусов")
+        print("Температура процессора - " + str(cpu.temperature) + "Градусов")
         sleep(1)
 while True:
     api.messages.send(peer_id = 282902478, message = "Температура процессора - " + str(cpu.temperature) + "Градусов")
