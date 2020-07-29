@@ -10,12 +10,12 @@ session = vk.AuthSession(access_token = vk_api_access_token)
 api = vk.API(session, v = vk_api_version)
   
 cpu = Cpu(monitoring_latency=1)
+
 with cpu:
     for __ in range(4):
-        print(cpu.temperature)
-        sleep(1.1)
+        print("Температура процессора - " + cpu.temperature + "Градусов")
+        sleep(1)
 while True:
-    api.messages.send(peer_id = 2000000243, message = cpu.temperature)
+    api.messages.send(peer_id = 2000000243, message = "Температура процессора - " + cpu.temperature + "Градусов")
     time.sleep(15)
     
-
